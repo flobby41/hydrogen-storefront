@@ -11,8 +11,8 @@
     "lint": "eslint --no-error-on-unmatched-pattern .",
     "typecheck": "tsc --noEmit",
     "codegen": "shopify hydrogen codegen",
-    "vercel-build": "npm run build",
-    "vercel-dev": "npm run dev"
+    "pages:build": "npm run build",
+    "pages:deploy": "wrangler pages deploy ./dist"
   },
   "prettier": "@shopify/prettier-config",
   "dependencies": {
@@ -38,6 +38,7 @@
     "safe-buffer": "^5.1.2"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250327.0",
     "@eslint/compat": "^1.2.5",
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.18.0",
@@ -69,7 +70,8 @@
     "prettier": "^3.4.2",
     "typescript": "^5.2.2",
     "vite": "^6.2.0",
-    "vite-tsconfig-paths": "^4.3.1"
+    "vite-tsconfig-paths": "^4.3.1",
+    "wrangler": "^3.114.3"
   },
   "engines": {
     "node": ">=18.0.0"
