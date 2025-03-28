@@ -64,48 +64,9 @@ export default {
 };
 
 // Exportation pour Cloudflare Workers
-export async function onRequest(context) {
-  // Adapter votre logique existante pour fonctionner avec Cloudflare
-  const { request, env } = context;
-  
-  // Utiliser votre handler Hydrogen existant
-  const appLoadContext = await createAppLoadContext(
-    request,
-    env,
-    context.executionContext,
-  );
-
-  /**
-   * Create a Remix request handler and pass
-   * Hydrogen's Storefront client to the loader context.
-   */
-  const handleRequest = createRequestHandler({
-    build: remixBuild,
-    mode: process.env.NODE_ENV,
-    getLoadContext: () => appLoadContext,
-  });
-
-  const response = await handleRequest(request);
-
-  if (appLoadContext.session.isPending) {
-    response.headers.set(
-      'Set-Cookie',
-      await appLoadContext.session.commit(),
-    );
+export default {
+  async fetch(request, env, ctx) {
+    // Votre logique existante
+    return await handleRequest(request, env);
   }
-
-  if (response.status === 404) {
-    /**
-     * Check for redirects only when there's a 404 from the app.
-     * If the redirect doesn't exist, then `storefrontRedirect`
-     * will pass through the 404 response.
-     */
-    return storefrontRedirect({
-      request,
-      response,
-      storefront: appLoadContext.storefront,
-    });
-  }
-
-  return response;
-}
+};
