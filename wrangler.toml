@@ -1,0 +1,9 @@
+name = "hydrogen-storefront"
+compatibility_date = "2025-03-28"
+
+# Point vers le fichier serveur compilé
+main = "dist/server/index.js"
+
+# Configuration des assets statiques
+[site]
+bucket = "dist/client" 
