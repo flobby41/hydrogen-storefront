@@ -1,4 +1,4 @@
-name = "hydrogen-storefront"
+name = "cloudf"
 compatibility_date = "2024-03-28"
 compatibility_flags = ["nodejs_compat"]
 
