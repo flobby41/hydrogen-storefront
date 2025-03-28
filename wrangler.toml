@@ -1,0 +1,24 @@
+name = "hydrogen-storefront"
+compatibility_date = "2024-03-28"
+compatibility_flags = ["nodejs_compat"]
+
+# Point vers le fichier serveur compilé
+main = "dist/server/index.js"
+
+# Configuration des assets statiques
+[site]
+bucket = "dist/client"
+
+[build]
+command = "npm run build"
+
+[vars]
+PUBLIC_STORE_DOMAIN = "mock.shop"
+PUBLIC_STOREFRONT_API_TOKEN = "3b580e70970c4528da70c98e097c2fa0"
+
+# Pour différencier les environnements
+[env.production]
+vars = { PUBLIC_STORE_DOMAIN = "mock.shop", PUBLIC_STOREFRONT_API_TOKEN = "3b580e70970c4528da70c98e097c2fa0" }
+
+[env.development]
+vars = { PUBLIC_STORE_DOMAIN = "mock.shop", PUBLIC_STOREFRONT_API_TOKEN = "3b580e70970c4528da70c98e097c2fa0" } 
