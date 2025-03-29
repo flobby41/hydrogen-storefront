@@ -7,12 +7,14 @@
   "scripts": {
     "build": "shopify hydrogen build --codegen",
     "dev": "shopify hydrogen dev --codegen",
-    "preview": "shopify hydrogen preview --build",
-    "lint": "eslint --no-error-on-unmatched-pattern .",
+    "preview": "npm run build && shopify hydrogen preview",
+    "lint": "eslint --no-error-on-unmatched-pattern --ext .js,.ts,.jsx,.tsx .",
     "typecheck": "tsc --noEmit",
+    "setup-local-sync": "npx @shopify/storefront-sync setup-local",
     "codegen": "shopify hydrogen codegen",
     "pages:build": "npm run build",
-    "pages:deploy": "wrangler pages deploy ./dist"
+    "pages:deploy": "wrangler pages deploy ./dist",
+    "predeploy": "mkdir -p node_modules/@shopify/remix-oxygen && cp -R dist/server/* node_modules/@shopify/remix-oxygen/ && touch node_modules/@shopify/remix-oxygen/server-build.js && echo 'export * from \"./index.js\";' > node_modules/@shopify/remix-oxygen/server-build.js"
   },
   "prettier": "@shopify/prettier-config",
   "dependencies": {

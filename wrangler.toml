@@ -11,7 +11,7 @@ bucket = "dist/client"
 
 # Configuration de build
 [build]
-command = "npm run build"
+command = "npm run build && npm run predeploy"
 
 # Variables d'environnement globales
 [vars]

@@ -1,5 +1,6 @@
 import {createRequestHandler} from '@shopify/remix-oxygen';
 import {createStorefrontClient} from '@shopify/hydrogen';
+// Importer directement depuis dist/server/index.js
 import * as build from './dist/server/index.js';
 
 export default {
