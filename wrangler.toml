@@ -9,31 +9,23 @@ main = "dist/server/index.js"
 [site]
 bucket = "dist/client"
 
-# Configuration spécifique pour Hydrogen
+# Configuration de build
 [build]
 command = "npm run build"
-cwd = "./"
-watch_dir = "app"
 
-[build.upload]
-format = "service-worker"
-
+# Variables d'environnement globales
 [vars]
 PUBLIC_STORE_DOMAIN = "mock.shop"
 PUBLIC_STOREFRONT_API_TOKEN = "3b580e70970c4528da70c98e097c2fa0"
 SESSION_SECRET = "2939230293hdhdas"
 
 # Pour différencier les environnements
-[env.production]
-vars = { 
-  PUBLIC_STORE_DOMAIN = "mock.shop", 
-  PUBLIC_STOREFRONT_API_TOKEN = "3b580e70970c4528da70c98e097c2fa0",
-  SESSION_SECRET = "2939230293hdhdas"
-}
+[env.production.vars]
+PUBLIC_STORE_DOMAIN = "mock.shop"
+PUBLIC_STOREFRONT_API_TOKEN = "3b580e70970c4528da70c98e097c2fa0"
+SESSION_SECRET = "2939230293hdhdas"
 
-[env.development]
-vars = { 
-  PUBLIC_STORE_DOMAIN = "mock.shop", 
-  PUBLIC_STOREFRONT_API_TOKEN = "3b580e70970c4528da70c98e097c2fa0",
-  SESSION_SECRET = "2939230293hdhdas" 
-} 
+[env.development.vars]
+PUBLIC_STORE_DOMAIN = "mock.shop"
+PUBLIC_STOREFRONT_API_TOKEN = "3b580e70970c4528da70c98e097c2fa0"
+SESSION_SECRET = "2939230293hdhdas" 
