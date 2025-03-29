@@ -8,11 +8,19 @@ export default {
       const client = createStorefrontClient({
         storeDomain: env.PUBLIC_STORE_DOMAIN,
         storefrontApiToken: env.PUBLIC_STOREFRONT_API_TOKEN,
+        // Ne pas exposer de jetons privés ici pour mock.shop
       });
 
       const handler = createRequestHandler(build, {
         mode: process.env.NODE_ENV,
-        getLoadContext: () => ({env, context: ctx, storefront: client}),
+        getLoadContext: () => ({
+          env, 
+          context: ctx, 
+          storefront: client,
+          session: {
+            secret: env.SESSION_SECRET || '2939230293hdhdas'
+          }
+        }),
       });
 
       return handler(request);

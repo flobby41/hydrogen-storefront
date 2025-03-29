@@ -17,9 +17,10 @@
   "prettier": "@shopify/prettier-config",
   "dependencies": {
     "@remix-run/react": "^2.16.1",
-    "@remix-run/server-runtime": "^2.16.1",
-    "@shopify/hydrogen": "2025.1.3",
+    "@remix-run/server-runtime": "^2.16.2",
+    "@shopify/hydrogen": "^2025.1.3",
     "@shopify/remix-oxygen": "^2.0.12",
+    "@types/node": "^22.13.14",
     "basic-auth": "^2.0.1",
     "compressible": "^2.0.18",
     "compression": "^1.8.0",

@@ -17,7 +17,8 @@
     "types": [
       "@shopify/oxygen-workers-types",
       "@remix-run/server-runtime",
-      "vite/client"
+      "vite/client",
+      "@types/node"
     ],
     "paths": {
       "~/*": ["app/*"]
