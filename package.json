@@ -14,7 +14,7 @@
     "codegen": "shopify hydrogen codegen",
     "pages:build": "npm run build",
     "pages:deploy": "wrangler pages deploy ./dist",
-    "predeploy": "mkdir -p node_modules/@shopify/remix-oxygen && cp -R dist/server/* node_modules/@shopify/remix-oxygen/ && touch node_modules/@shopify/remix-oxygen/server-build.js && echo 'export * from \"./index.js\";' > node_modules/@shopify/remix-oxygen/server-build.js"
+    "predeploy": "mkdir -p node_modules/@shopify/remix-oxygen && echo 'export * from \"../../../dist/server/index.js\";' > node_modules/@shopify/remix-oxygen/server-build.js"
   },
   "prettier": "@shopify/prettier-config",
   "dependencies": {

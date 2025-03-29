@@ -3,7 +3,7 @@ compatibility_date = "2024-03-28"
 compatibility_flags = ["nodejs_compat"]
 
 # Point vers le fichier serveur compilé
-main = "dist/server/index.js"
+main = "_worker.js"
 
 # Configuration des assets statiques
 [site]
@@ -18,14 +18,17 @@ command = "npm run build && npm run predeploy"
 PUBLIC_STORE_DOMAIN = "mock.shop"
 PUBLIC_STOREFRONT_API_TOKEN = "3b580e70970c4528da70c98e097c2fa0"
 SESSION_SECRET = "2939230293hdhdas"
+NODE_ENV = "production"
 
 # Pour différencier les environnements
 [env.production.vars]
 PUBLIC_STORE_DOMAIN = "mock.shop"
 PUBLIC_STOREFRONT_API_TOKEN = "3b580e70970c4528da70c98e097c2fa0"
 SESSION_SECRET = "2939230293hdhdas"
+NODE_ENV = "production"
 
 [env.development.vars]
 PUBLIC_STORE_DOMAIN = "mock.shop"
 PUBLIC_STOREFRONT_API_TOKEN = "3b580e70970c4528da70c98e097c2fa0"
-SESSION_SECRET = "2939230293hdhdas" 
+SESSION_SECRET = "2939230293hdhdas"
+NODE_ENV = "development" 
