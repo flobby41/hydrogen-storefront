@@ -31,4 +31,4 @@ export default {
   },
 };
 
-export { default } from "./dist/server/index.js"; 
+export { default as default } from "./dist/server/index.js"; 

@@ -9,8 +9,14 @@ main = "dist/server/index.js"
 [site]
 bucket = "dist/client"
 
+# Configuration spécifique pour Hydrogen
 [build]
 command = "npm run build"
+cwd = "./"
+watch_dir = "app"
+
+[build.upload]
+format = "service-worker"
 
 [vars]
 PUBLIC_STORE_DOMAIN = "mock.shop"
