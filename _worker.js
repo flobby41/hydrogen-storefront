@@ -29,6 +29,4 @@ export default {
       return new Response('An unexpected error occurred', {status: 500});
     }
   },
-};
-
-export { default as default } from "./dist/server/index.js"; 
+}; 
